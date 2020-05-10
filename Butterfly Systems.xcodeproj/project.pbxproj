@@ -15,6 +15,11 @@
 		B55C9E412466E412003FABE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B55C9E402466E412003FABE5 /* Assets.xcassets */; };
 		B55C9E442466E412003FABE5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B55C9E422466E412003FABE5 /* LaunchScreen.storyboard */; };
 		B55C9E4F2466E412003FABE5 /* Butterfly_SystemsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E4E2466E412003FABE5 /* Butterfly_SystemsTests.swift */; };
+		B55C9E5D2466FF67003FABE5 /* URLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E5C2466FF67003FABE5 /* URLSession.swift */; };
+		B55C9E5F2466FF79003FABE5 /* DispatchQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E5E2466FF79003FABE5 /* DispatchQueue.swift */; };
+		B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E602466FF94003FABE5 /* HttpMethod.swift */; };
+		B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E622466FFA4003FABE5 /* HttpError.swift */; };
+		B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E642466FFE2003FABE5 /* HttpClient.swift */; };
 		B922D9121350FE91241223A2 /* Pods_Butterfly_SystemsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */; };
 		E95AFFA0ED313F6B457B835D /* Pods_Butterfly_Systems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */; };
 /* End PBXBuildFile section */
@@ -46,6 +51,11 @@
 		B55C9E4A2466E412003FABE5 /* Butterfly SystemsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Butterfly SystemsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B55C9E4E2466E412003FABE5 /* Butterfly_SystemsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Butterfly_SystemsTests.swift; sourceTree = "<group>"; };
 		B55C9E502466E412003FABE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B55C9E5C2466FF67003FABE5 /* URLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSession.swift; sourceTree = "<group>"; };
+		B55C9E5E2466FF79003FABE5 /* DispatchQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchQueue.swift; sourceTree = "<group>"; };
+		B55C9E602466FF94003FABE5 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
+		B55C9E622466FFA4003FABE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
+		B55C9E642466FFE2003FABE5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
 		DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_SystemsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_Systems.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -78,7 +88,6 @@
 				48ABFB18C3C8CD1569C42427 /* Pods-Butterfly SystemsTests.debug.xcconfig */,
 				01C0E5436C41491638035469 /* Pods-Butterfly SystemsTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +114,9 @@
 		B55C9E332466E411003FABE5 /* Butterfly Systems */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9E5A2466FF46003FABE5 /* API */,
+				B55C9E5B2466FF51003FABE5 /* Extensions */,
+				B55C9E592466FF38003FABE5 /* Models */,
 				B55C9E342466E411003FABE5 /* AppDelegate.swift */,
 				B55C9E362466E411003FABE5 /* SceneDelegate.swift */,
 				B55C9E382466E411003FABE5 /* ViewController.swift */,
@@ -124,6 +136,32 @@
 				B55C9E502466E412003FABE5 /* Info.plist */,
 			);
 			path = "Butterfly SystemsTests";
+			sourceTree = "<group>";
+		};
+		B55C9E592466FF38003FABE5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B55C9E5A2466FF46003FABE5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9E642466FFE2003FABE5 /* HttpClient.swift */,
+				B55C9E622466FFA4003FABE5 /* HttpError.swift */,
+				B55C9E602466FF94003FABE5 /* HttpMethod.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		B55C9E5B2466FF51003FABE5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9E5E2466FF79003FABE5 /* DispatchQueue.swift */,
+				B55C9E5C2466FF67003FABE5 /* URLSession.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F773F3FCF6EBA1F0555883CA /* Frameworks */ = {
@@ -287,8 +325,13 @@
 			files = (
 				B55C9E392466E411003FABE5 /* ViewController.swift in Sources */,
 				B55C9E352466E411003FABE5 /* AppDelegate.swift in Sources */,
+				B55C9E5D2466FF67003FABE5 /* URLSession.swift in Sources */,
+				B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */,
+				B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */,
+				B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */,
 				B55C9E3F2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld in Sources */,
 				B55C9E372466E411003FABE5 /* SceneDelegate.swift in Sources */,
+				B55C9E5F2466FF79003FABE5 /* DispatchQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
