@@ -20,6 +20,15 @@
 		B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E602466FF94003FABE5 /* HttpMethod.swift */; };
 		B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E622466FFA4003FABE5 /* HttpError.swift */; };
 		B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9E642466FFE2003FABE5 /* HttpClient.swift */; };
+		B55C9F05246802DD003FABE5 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F01246802DD003FABE5 /* Invoice.swift */; };
+		B55C9F06246802DD003FABE5 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F02246802DD003FABE5 /* Item.swift */; };
+		B55C9F07246802DD003FABE5 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F03246802DD003FABE5 /* Order.swift */; };
+		B55C9F08246802DD003FABE5 /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F04246802DD003FABE5 /* Receipt.swift */; };
+		B55C9F0A24680722003FABE5 /* CodingUserInfoKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F0924680722003FABE5 /* CodingUserInfoKey.swift */; };
+		B55C9F0C24680C0A003FABE5 /* KeyedDecodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F0B24680C0A003FABE5 /* KeyedDecodingContainer.swift */; };
+		B55C9F0E24680D29003FABE5 /* KeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */; };
+		B55C9F122468336A003FABE5 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F112468336A003FABE5 /* DateFormatter.swift */; };
+		B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1424683519003FABE5 /* OrderClient.swift */; };
 		B922D9121350FE91241223A2 /* Pods_Butterfly_SystemsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */; };
 		E95AFFA0ED313F6B457B835D /* Pods_Butterfly_Systems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */; };
 /* End PBXBuildFile section */
@@ -56,6 +65,23 @@
 		B55C9E602466FF94003FABE5 /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
 		B55C9E622466FFA4003FABE5 /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
 		B55C9E642466FFE2003FABE5 /* HttpClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClient.swift; sourceTree = "<group>"; };
+		B55C9EEE2467FC06003FABE5 /* Item+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B55C9EEF2467FC06003FABE5 /* Item+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B55C9EF02467FC06003FABE5 /* Receipt+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B55C9EF12467FC06003FABE5 /* Receipt+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Receipt+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B55C9EF22467FC06003FABE5 /* Order+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B55C9EF32467FC06003FABE5 /* Order+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B55C9EF42467FC06003FABE5 /* Invoice+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B55C9EF52467FC06003FABE5 /* Invoice+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B55C9F01246802DD003FABE5 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		B55C9F02246802DD003FABE5 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		B55C9F03246802DD003FABE5 /* Order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		B55C9F04246802DD003FABE5 /* Receipt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		B55C9F0924680722003FABE5 /* CodingUserInfoKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodingUserInfoKey.swift; sourceTree = "<group>"; };
+		B55C9F0B24680C0A003FABE5 /* KeyedDecodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedDecodingContainer.swift; sourceTree = "<group>"; };
+		B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedEncodingContainer.swift; sourceTree = "<group>"; };
+		B55C9F112468336A003FABE5 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
+		B55C9F1424683519003FABE5 /* OrderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderClient.swift; sourceTree = "<group>"; };
 		DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_SystemsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_Systems.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +142,7 @@
 			children = (
 				B55C9E5A2466FF46003FABE5 /* API */,
 				B55C9E5B2466FF51003FABE5 /* Extensions */,
+				B55C9F00246802DD003FABE5 /* Codable */,
 				B55C9E592466FF38003FABE5 /* Models */,
 				B55C9E342466E411003FABE5 /* AppDelegate.swift */,
 				B55C9E362466E411003FABE5 /* SceneDelegate.swift */,
@@ -141,6 +168,14 @@
 		B55C9E592466FF38003FABE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9EEE2467FC06003FABE5 /* Item+CoreDataClass.swift */,
+				B55C9EEF2467FC06003FABE5 /* Item+CoreDataProperties.swift */,
+				B55C9EF02467FC06003FABE5 /* Receipt+CoreDataClass.swift */,
+				B55C9EF12467FC06003FABE5 /* Receipt+CoreDataProperties.swift */,
+				B55C9EF22467FC06003FABE5 /* Order+CoreDataClass.swift */,
+				B55C9EF32467FC06003FABE5 /* Order+CoreDataProperties.swift */,
+				B55C9EF42467FC06003FABE5 /* Invoice+CoreDataClass.swift */,
+				B55C9EF52467FC06003FABE5 /* Invoice+CoreDataProperties.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -151,6 +186,7 @@
 				B55C9E642466FFE2003FABE5 /* HttpClient.swift */,
 				B55C9E622466FFA4003FABE5 /* HttpError.swift */,
 				B55C9E602466FF94003FABE5 /* HttpMethod.swift */,
+				B55C9F1424683519003FABE5 /* OrderClient.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -158,10 +194,25 @@
 		B55C9E5B2466FF51003FABE5 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9F0924680722003FABE5 /* CodingUserInfoKey.swift */,
+				B55C9F112468336A003FABE5 /* DateFormatter.swift */,
 				B55C9E5E2466FF79003FABE5 /* DispatchQueue.swift */,
+				B55C9F0B24680C0A003FABE5 /* KeyedDecodingContainer.swift */,
+				B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */,
 				B55C9E5C2466FF67003FABE5 /* URLSession.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B55C9F00246802DD003FABE5 /* Codable */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9F01246802DD003FABE5 /* Invoice.swift */,
+				B55C9F02246802DD003FABE5 /* Item.swift */,
+				B55C9F03246802DD003FABE5 /* Order.swift */,
+				B55C9F04246802DD003FABE5 /* Receipt.swift */,
+			);
+			path = Codable;
 			sourceTree = "<group>";
 		};
 		F773F3FCF6EBA1F0555883CA /* Frameworks */ = {
@@ -184,6 +235,7 @@
 				B55C9E2D2466E411003FABE5 /* Sources */,
 				B55C9E2E2466E411003FABE5 /* Frameworks */,
 				B55C9E2F2466E411003FABE5 /* Resources */,
+				B55C9F132468341F003FABE5 /* Run Swiftlint */,
 			);
 			buildRules = (
 			);
@@ -272,6 +324,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		B55C9F132468341F003FABE5 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
 		DFE7D484ED4F256C2C69CA3C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -323,13 +393,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55C9F0A24680722003FABE5 /* CodingUserInfoKey.swift in Sources */,
 				B55C9E392466E411003FABE5 /* ViewController.swift in Sources */,
 				B55C9E352466E411003FABE5 /* AppDelegate.swift in Sources */,
+				B55C9F0E24680D29003FABE5 /* KeyedEncodingContainer.swift in Sources */,
 				B55C9E5D2466FF67003FABE5 /* URLSession.swift in Sources */,
+				B55C9F08246802DD003FABE5 /* Receipt.swift in Sources */,
 				B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */,
+				B55C9F122468336A003FABE5 /* DateFormatter.swift in Sources */,
 				B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */,
+				B55C9F0C24680C0A003FABE5 /* KeyedDecodingContainer.swift in Sources */,
 				B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */,
+				B55C9F07246802DD003FABE5 /* Order.swift in Sources */,
+				B55C9F06246802DD003FABE5 /* Item.swift in Sources */,
 				B55C9E3F2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld in Sources */,
+				B55C9F05246802DD003FABE5 /* Invoice.swift in Sources */,
+				B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */,
 				B55C9E372466E411003FABE5 /* SceneDelegate.swift in Sources */,
 				B55C9E5F2466FF79003FABE5 /* DispatchQueue.swift in Sources */,
 			);
