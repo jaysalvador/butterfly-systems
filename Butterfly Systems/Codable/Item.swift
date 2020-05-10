@@ -36,9 +36,9 @@ public class Item: NSManagedObject, Codable {
         
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Package", in: managedObjectContext) else {
+            let entity = NSEntityDescription.entity(forEntityName: "Item", in: managedObjectContext) else {
                 
-            fatalError("Failed to decode Package")
+            fatalError("Failed to decode Item")
         }
 
         self.init(entity: entity, insertInto: managedObjectContext)

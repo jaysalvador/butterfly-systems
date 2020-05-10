@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15400" systemVersion="18G3020" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Invoice" representedClassName="Invoice" syncable="YES">
+    <entity name="Invoice" representedClassName=".Invoice" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
@@ -8,12 +8,12 @@
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="lastUpdatedUserEntityId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="receiptSentDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="receiveStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="receivedStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="transientIdentifier" optional="YES" attributeType="String"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="invoices" inverseEntity="Order"/>
         <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="invoice" inverseEntity="Receipt"/>
     </entity>
-    <entity name="Item" representedClassName="Item" syncable="YES">
+    <entity name="Item" representedClassName=".Item" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -23,7 +23,7 @@
         <attribute name="transientIdentifier" optional="YES" attributeType="String"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="items" inverseEntity="Order"/>
     </entity>
-    <entity name="Order" representedClassName="Order" syncable="YES">
+    <entity name="Order" representedClassName=".Order" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="approvalStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="deliveryNote" optional="YES" attributeType="String"/>
@@ -41,7 +41,7 @@
         <relationship name="invoices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invoice" inverseName="order" inverseEntity="Invoice"/>
         <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="order" inverseEntity="Item"/>
     </entity>
-    <entity name="Receipt" representedClassName="Receipt" syncable="YES">
+    <entity name="Receipt" representedClassName=".Receipt" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>

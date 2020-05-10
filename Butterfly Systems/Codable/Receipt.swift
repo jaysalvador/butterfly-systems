@@ -40,9 +40,9 @@ public class Receipt: NSManagedObject, Codable {
         
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Package", in: managedObjectContext) else {
+            let entity = NSEntityDescription.entity(forEntityName: "Receipt", in: managedObjectContext) else {
                 
-            fatalError("Failed to decode Package")
+            fatalError("Failed to decode Receipt")
         }
 
         self.init(entity: entity, insertInto: managedObjectContext)

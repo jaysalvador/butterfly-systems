@@ -25,8 +25,8 @@ public class Order: NSManagedObject, Codable {
     @NSManaged var approvalStatus: NSNumber?
     @NSManaged var preferredDeliveryDate: Date?
     @NSManaged var deliveryNote: String?
-    @NSManaged var items: [Item]?
-    @NSManaged var invoices: [Invoice]?
+    @NSManaged var items: NSSet?
+    @NSManaged var invoices: NSSet?
     
     enum CodingKeys: String, CodingKey {
         
@@ -54,9 +54,9 @@ public class Order: NSManagedObject, Codable {
         
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Package", in: managedObjectContext) else {
+            let entity = NSEntityDescription.entity(forEntityName: "Order", in: managedObjectContext) else {
                 
-            fatalError("Failed to decode Package")
+            fatalError("Failed to decode Order")
         }
 
         self.init(entity: entity, insertInto: managedObjectContext)
@@ -77,8 +77,9 @@ public class Order: NSManagedObject, Codable {
         self.approvalStatus = container.intIfPresent(forKey: .approvalStatus)
         self.preferredDeliveryDate = try container.decodeIfPresent(Date.self, forKey: .preferredDeliveryDate)
         self.deliveryNote = try container.decodeIfPresent(String.self, forKey: .deliveryNote)
-        self.items = try container.decodeIfPresent([Item].self, forKey: .items)
-        self.invoices = try container.decodeIfPresent([Invoice].self, forKey: .invoices)
+        self.items = container.decodeSetIfPresent(Item.self, forKey: .items)
+        self.invoices = container.decodeSetIfPresent(Invoice.self, forKey: .invoices)
+
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -99,7 +100,8 @@ public class Order: NSManagedObject, Codable {
         try container.encodeIntIfPresent(self.approvalStatus, forKey: .approvalStatus)
         try container.encodeIfPresent(self.preferredDeliveryDate, forKey: .preferredDeliveryDate)
         try container.encodeIfPresent(self.deliveryNote, forKey: .deliveryNote)
-        try container.encodeIfPresent(self.items, forKey: .items)
-        try container.encodeIfPresent(self.invoices, forKey: .invoices)
+        
+        try container.encodeSetIfPresent(Item.self, items: self.items, forKey: .items)
+        try container.encodeSetIfPresent(Invoice.self, items: self.invoices, forKey: .items)
     }
 }

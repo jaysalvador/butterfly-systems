@@ -29,4 +29,11 @@ extension KeyedEncodingContainer {
         
         try self.encodeIfPresent(value, forKey: key)
     }
+    
+    mutating func encodeSetIfPresent<T>(_ type: T.Type, items: NSSet?, forKey key: Self.Key) throws where T: Encodable {
+        
+        let array = items?.allObjects as? [T]
+        
+        try self.encodeIfPresent(array, forKey: key)
+    }
 }

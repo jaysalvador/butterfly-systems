@@ -33,4 +33,14 @@ extension KeyedDecodingContainer {
         
         return NSNumber(value: value)
     }
+    
+    func decodeSetIfPresent<T>(_ type: T.Type, forKey key: KeyedDecodingContainer.Key) -> NSSet? where T: Decodable {
+        
+        guard let value = try? self.decodeIfPresent(Array<T>.self, forKey: key) else {
+            
+            return nil
+        }
+        
+        return NSSet(array: value)
+    }
 }

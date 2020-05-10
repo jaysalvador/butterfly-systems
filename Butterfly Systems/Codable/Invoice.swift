@@ -20,7 +20,7 @@ public class Invoice: NSManagedObject, Codable {
     @NSManaged var receiptSentDate: Date?
     @NSManaged var activeFlag: NSNumber?
     @NSManaged var lastUpdated: Date?
-    @NSManaged var receipts: [Receipt]?
+    @NSManaged var receipts: NSSet?
     
     enum CodingKeys: String, CodingKey {
         
@@ -42,9 +42,9 @@ public class Invoice: NSManagedObject, Codable {
         
         guard let codingUserInfoKeyManagedObjectContext = CodingUserInfoKey.managedObjectContext,
             let managedObjectContext = decoder.userInfo[codingUserInfoKeyManagedObjectContext] as? NSManagedObjectContext,
-            let entity = NSEntityDescription.entity(forEntityName: "Package", in: managedObjectContext) else {
+            let entity = NSEntityDescription.entity(forEntityName: "Invoice", in: managedObjectContext) else {
                 
-            fatalError("Failed to decode Package")
+            fatalError("Failed to decode Invoice")
         }
 
         self.init(entity: entity, insertInto: managedObjectContext)
@@ -60,7 +60,7 @@ public class Invoice: NSManagedObject, Codable {
         self.receiptSentDate = try container.decodeIfPresent(Date.self, forKey: .receiptSentDate)
         self.activeFlag = container.boolIfPresent(forKey: .activeFlag)
         self.lastUpdated = try container.decodeIfPresent(Date.self, forKey: .lastUpdated)
-        self.receipts = try container.decodeIfPresent([Receipt].self, forKey: .receipts)
+        self.receipts = container.decodeSetIfPresent(Receipt.self, forKey: .receipts)
     }
     
     public func encode(to encoder: Encoder) throws {
@@ -76,6 +76,6 @@ public class Invoice: NSManagedObject, Codable {
         try container.encodeIfPresent(self.receiptSentDate, forKey: .receiptSentDate)
         try container.encodeBoolIfPresent(self.activeFlag, forKey: .activeFlag)
         try container.encodeIfPresent(self.lastUpdated, forKey: .lastUpdated)
-        try container.encodeIfPresent(self.receipts, forKey: .receipts)
+        try container.encodeSetIfPresent(Receipt.self, items: self.receipts, forKey: .receipts)
     }
 }
