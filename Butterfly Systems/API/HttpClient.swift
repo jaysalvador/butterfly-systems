@@ -118,8 +118,6 @@ public class HttpClient: HttpClientProtocol {
                         
                         let decoded = try decoder.decode(returnType, from: data)
                         
-                        try managedObjectContext?.save()
-                        
                         DispatchQueue.main.async {
                                                         
                             onCompletion?(.success(decoded))

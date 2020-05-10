@@ -134,7 +134,7 @@
 			children = (
 				B55C9E5A2466FF46003FABE5 /* API */,
 				B55C9E5B2466FF51003FABE5 /* Extensions */,
-				B55C9F00246802DD003FABE5 /* Codable */,
+				B55C9F00246802DD003FABE5 /* Models */,
 				B55C9E342466E411003FABE5 /* AppDelegate.swift */,
 				B55C9E362466E411003FABE5 /* SceneDelegate.swift */,
 				B55C9E382466E411003FABE5 /* ViewController.swift */,
@@ -180,7 +180,7 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B55C9F00246802DD003FABE5 /* Codable */ = {
+		B55C9F00246802DD003FABE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				B55C9F01246802DD003FABE5 /* Invoice.swift */,
@@ -188,7 +188,7 @@
 				B55C9F03246802DD003FABE5 /* Order.swift */,
 				B55C9F04246802DD003FABE5 /* Receipt.swift */,
 			);
-			path = Codable;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F773F3FCF6EBA1F0555883CA /* Frameworks */ = {
