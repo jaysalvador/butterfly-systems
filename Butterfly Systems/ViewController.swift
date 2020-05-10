@@ -17,12 +17,37 @@ class ViewController: UIViewController {
         let client = OrderClient()
         
         client?.getOrders { response in
+        
+            let ordersDb = Order.fetchOrders()
             
             switch response {
             case .success(let orders):
                 
-                print(orders.count)
+                let managedObjectContext = CoreDataStack.persistentContainer.viewContext
+                            
+                for order in orders {
+                    
+                    if let orderDB = ordersDb?.first(where: { $0.id == order.id }) {
+                        
+                        if order.isLastest(orderDB) {
+
+                            managedObjectContext.delete(orderDB)
+                        }
+                        else {
+
+                            managedObjectContext.delete(order)
+                        }
+                    }
+                }
                 
+                do {
+
+                    try managedObjectContext.save()
+                }
+                catch {
+                    
+                    print(error)
+                }
             case .failure(let error):
                 
                 print(error)

@@ -29,6 +29,8 @@
 		B55C9F0E24680D29003FABE5 /* KeyedEncodingContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */; };
 		B55C9F122468336A003FABE5 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F112468336A003FABE5 /* DateFormatter.swift */; };
 		B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1424683519003FABE5 /* OrderClient.swift */; };
+		B55C9F192468BF1A003FABE5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */; };
+		B55C9F1B2468C01E003FABE5 /* Order+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1A2468C01E003FABE5 /* Order+CoreDataHelper.swift */; };
 		B922D9121350FE91241223A2 /* Pods_Butterfly_SystemsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */; };
 		E95AFFA0ED313F6B457B835D /* Pods_Butterfly_Systems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */; };
 /* End PBXBuildFile section */
@@ -74,6 +76,8 @@
 		B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyedEncodingContainer.swift; sourceTree = "<group>"; };
 		B55C9F112468336A003FABE5 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		B55C9F1424683519003FABE5 /* OrderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderClient.swift; sourceTree = "<group>"; };
+		B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		B55C9F1A2468C01E003FABE5 /* Order+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataHelper.swift"; sourceTree = "<group>"; };
 		DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_SystemsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_Systems.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -183,9 +187,11 @@
 		B55C9F00246802DD003FABE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */,
 				B55C9F01246802DD003FABE5 /* Invoice.swift */,
 				B55C9F02246802DD003FABE5 /* Item.swift */,
 				B55C9F03246802DD003FABE5 /* Order.swift */,
+				B55C9F1A2468C01E003FABE5 /* Order+CoreDataHelper.swift */,
 				B55C9F04246802DD003FABE5 /* Receipt.swift */,
 			);
 			path = Models;
@@ -377,12 +383,14 @@
 				B55C9F08246802DD003FABE5 /* Receipt.swift in Sources */,
 				B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */,
 				B55C9F122468336A003FABE5 /* DateFormatter.swift in Sources */,
+				B55C9F192468BF1A003FABE5 /* CoreDataStack.swift in Sources */,
 				B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */,
 				B55C9F0C24680C0A003FABE5 /* KeyedDecodingContainer.swift in Sources */,
 				B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */,
 				B55C9F07246802DD003FABE5 /* Order.swift in Sources */,
 				B55C9F06246802DD003FABE5 /* Item.swift in Sources */,
 				B55C9E3F2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld in Sources */,
+				B55C9F1B2468C01E003FABE5 /* Order+CoreDataHelper.swift in Sources */,
 				B55C9F05246802DD003FABE5 /* Invoice.swift in Sources */,
 				B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */,
 				B55C9E372466E411003FABE5 /* SceneDelegate.swift in Sources */,

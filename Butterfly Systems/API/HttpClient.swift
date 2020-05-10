@@ -35,12 +35,13 @@ public class HttpClient: HttpClientProtocol {
         self.init(
             baseUrl: "https://my-json-server.typicode.com/butterfly-systems",
             urlSession: URLSession.shared,
-            persistentContainer: AppDelegate.shared?.persistentContainer)
+            persistentContainer: CoreDataStack.persistentContainer)
     }
     
     /// Creates a custom instance of `HttpClient`
     /// - Parameter _baseUrl: path of the API
     /// - Parameter _urlSession: `URLSession` Object
+    /// - Parameter _persistentContainer: `NSPersistentContainer` Object
     init(baseUrl _baseUrl: String, urlSession _urlSession: URLSessionProtocol, persistentContainer _persistentContainer: NSPersistentContainer?) {
         
         self.baseUrl = _baseUrl

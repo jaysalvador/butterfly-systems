@@ -104,4 +104,9 @@ public class Order: NSManagedObject, Codable {
         try container.encodeSetIfPresent(Item.self, items: self.items, forKey: .items)
         try container.encodeSetIfPresent(Invoice.self, items: self.invoices, forKey: .items)
     }
+    
+    public class func fetchRequest() -> NSFetchRequest<Order> {
+        
+        return NSFetchRequest<Order>(entityName: "Order")
+    }
 }

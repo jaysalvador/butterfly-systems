@@ -11,7 +11,7 @@
         <attribute name="receivedStatus" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="transientIdentifier" optional="YES" attributeType="String"/>
         <relationship name="order" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Order" inverseName="invoices" inverseEntity="Order"/>
-        <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Receipt" inverseName="invoice" inverseEntity="Receipt"/>
+        <relationship name="receipts" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Receipt" inverseName="invoice" inverseEntity="Receipt"/>
     </entity>
     <entity name="Item" representedClassName=".Item" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
@@ -38,8 +38,8 @@
         <attribute name="serverTimestamp" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="status" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="supplierId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
-        <relationship name="invoices" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Invoice" inverseName="order" inverseEntity="Invoice"/>
-        <relationship name="items" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Item" inverseName="order" inverseEntity="Item"/>
+        <relationship name="invoices" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Invoice" inverseName="order" inverseEntity="Invoice"/>
+        <relationship name="items" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Item" inverseName="order" inverseEntity="Item"/>
     </entity>
     <entity name="Receipt" representedClassName=".Receipt" syncable="YES">
         <attribute name="activeFlag" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>

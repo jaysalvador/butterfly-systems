@@ -78,4 +78,9 @@ public class Invoice: NSManagedObject, Codable {
         try container.encodeIfPresent(self.lastUpdated, forKey: .lastUpdated)
         try container.encodeSetIfPresent(Receipt.self, items: self.receipts, forKey: .receipts)
     }
+    
+    public class func fetchRequest() -> NSFetchRequest<Invoice> {
+        
+        return NSFetchRequest<Invoice>(entityName: "Invoice")
+    }
 }

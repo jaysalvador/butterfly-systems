@@ -66,4 +66,9 @@ public class Item: NSManagedObject, Codable {
         try container.encodeBoolIfPresent(self.activeFlag, forKey: .activeFlag)
         try container.encodeIfPresent(self.lastUpdated, forKey: .lastUpdated)
     }
+    
+    public class func fetchRequest() -> NSFetchRequest<Item> {
+        
+        return NSFetchRequest<Item>(entityName: "Item")
+    }
 }
