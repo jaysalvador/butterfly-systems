@@ -7,28 +7,66 @@
 //
 
 import XCTest
+import CoreData
 @testable import Butterfly_Systems
 
 class Butterfly_SystemsTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testData() {
+        
+        let orders = getOrders()
+        
+        XCTAssertEqual(orders.count, 1, "data must have one order")
+        
+        XCTAssertEqual(orders.first?.items?.count, 4, "Order must have 4 items")
+        
+        XCTAssertEqual(orders.first?.invoices?.count, 1, "Order must have 1 invoice")
+        
+        let newOrder = Order(context: CoreDataStack.persistentContainer.viewContext)
+        
+        newOrder.lastUpdated = Date()
+        
+        if let order = orders.first {
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+            XCTAssertEqual(newOrder.isLastest(order), true, "New order must be latest")
+            
+            let viewModel = DetailViewModel(order: order)
+            
+            viewModel.getItems()
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+            XCTAssertEqual(viewModel.items?.count, 4, "Order must have 4 items")
+            
+            viewModel.segment = .invoice
+            
+            viewModel.getItems()
+            
+            XCTAssertEqual(viewModel.items?.count, 1, "Order must have 1 invoice")
+            
         }
     }
 
+    func getOrders() -> [Order] {
+        
+        let expectation = self.expectation(description: "no data recieved")
+        
+        var orders = [Order]()
+        
+        DataHelper.getData { (response) in
+            
+            switch response {
+                
+            case .success(let _orders):
+                
+                orders = _orders
+                
+            case .failure:
+                
+                break
+            }
+            expectation.fulfill()
+        }
+        wait(for: [expectation], timeout: 5.0)
+        
+        return orders
+    }
 }

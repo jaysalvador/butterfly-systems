@@ -9,11 +9,11 @@
 import Foundation
 import CoreData
 
-class CoreDataStack {
+public class CoreDataStack {
 
     // MARK: - Core Data stack
 
-    static var persistentContainer: NSPersistentContainer = {
+    public static var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -42,7 +42,7 @@ class CoreDataStack {
 
     // MARK: - Core Data Saving support
 
-    class func saveContext () {
+    public class func saveContext () {
         let context = CoreDataStack.persistentContainer.viewContext
         
         if context.hasChanges {

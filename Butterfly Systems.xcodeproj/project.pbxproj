@@ -39,6 +39,8 @@
 		B55C9F2C2468E0AC003FABE5 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F2B2468E0AC003FABE5 /* DetailViewController.swift */; };
 		B55C9F2E2468E0B7003FABE5 /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F2D2468E0B7003FABE5 /* DetailViewModel.swift */; };
 		B55C9F302468E367003FABE5 /* Item+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F2F2468E367003FABE5 /* Item+CoreDataHelper.swift */; };
+		B55C9F322468F374003FABE5 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F312468F374003FABE5 /* DataHelper.swift */; };
+		B55C9F342468F3CF003FABE5 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B55C9F332468F3CF003FABE5 /* data.json */; };
 		B922D9121350FE91241223A2 /* Pods_Butterfly_SystemsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */; };
 		E95AFFA0ED313F6B457B835D /* Pods_Butterfly_Systems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */; };
 /* End PBXBuildFile section */
@@ -94,6 +96,8 @@
 		B55C9F2B2468E0AC003FABE5 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B55C9F2D2468E0B7003FABE5 /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
 		B55C9F2F2468E367003FABE5 /* Item+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Item+CoreDataHelper.swift"; sourceTree = "<group>"; };
+		B55C9F312468F374003FABE5 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		B55C9F332468F3CF003FABE5 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_SystemsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_Systems.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -166,7 +170,9 @@
 		B55C9E4D2466E412003FABE5 /* Butterfly SystemsTests */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9F332468F3CF003FABE5 /* data.json */,
 				B55C9E4E2466E412003FABE5 /* Butterfly_SystemsTests.swift */,
+				B55C9F312468F374003FABE5 /* DataHelper.swift */,
 				B55C9E502466E412003FABE5 /* Info.plist */,
 			);
 			path = "Butterfly SystemsTests";
@@ -348,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55C9F342468F3CF003FABE5 /* data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,6 +466,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55C9E4F2466E412003FABE5 /* Butterfly_SystemsTests.swift in Sources */,
+				B55C9F322468F374003FABE5 /* DataHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

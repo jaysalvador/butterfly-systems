@@ -10,7 +10,7 @@ import Foundation
 
 extension DateFormatter {
     
-    static let dateAndTime: DateFormatter = {
+    public static let dateAndTime: DateFormatter = {
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .current
@@ -19,7 +19,7 @@ extension DateFormatter {
         return dateFormatter
     }()
     
-    static let displayDate: DateFormatter = {
+    public static let displayDate: DateFormatter = {
         
         let dateFormatter = DateFormatter()
         dateFormatter.locale = .current
