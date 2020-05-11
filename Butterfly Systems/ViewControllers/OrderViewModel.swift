@@ -26,6 +26,8 @@ protocol OrderViewModelProtocol {
     
     // MARK: - Functions
     
+    func loadOrders()
+    
     func getOrders()
     
     func newOrder()
@@ -61,7 +63,7 @@ class OrderViewModel: OrderViewModelProtocol {
     
     // MARK: - Functions
     
-    func getOrders() {
+    func loadOrders() {
         
         self.orderClient?.getOrders { [weak self] response in
         
@@ -91,9 +93,7 @@ class OrderViewModel: OrderViewModelProtocol {
 
                     try managedObjectContext.save()
                     
-                    self?.orders = Order.fetchOrders()
-                    
-                    self?.onUpdated?()
+                    self?.getOrders()
                 }
                 catch {
                     
@@ -114,9 +114,7 @@ class OrderViewModel: OrderViewModelProtocol {
         
         if Order.create() != nil {
             
-            self.orders = Order.fetchOrders()
-            
-            self.onUpdated?()
+            self.getOrders()
         }
         else {
             
@@ -125,6 +123,13 @@ class OrderViewModel: OrderViewModelProtocol {
             self.onError?()
         }
         
+    }
+    
+    func getOrders() {
+        
+        self.orders = Order.fetchOrders()
+        
+        self.onUpdated?()
     }
     
 }

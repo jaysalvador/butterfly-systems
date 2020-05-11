@@ -18,7 +18,7 @@ class OrderCell: UITableViewCell {
         
         self.orderLabel.text = "Order: \(order.id?.intValue ?? 0)"
         
-        self.dateLabel.text = order.lastUpdated?.toString(using: .dateAndTime)
+        self.dateLabel.text = order.lastUpdated?.toString(using: .displayDate)
         
         self.itemsLabel.text = "Items: \(order.items?.count ?? 0)"
         

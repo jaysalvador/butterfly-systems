@@ -18,6 +18,7 @@ public class Item: NSManagedObject, Codable {
     @NSManaged var transientIdentifier: String?
     @NSManaged var activeFlag: NSNumber?
     @NSManaged var lastUpdated: Date?
+    @NSManaged var order: Order?
     
     enum CodingKeys: String, CodingKey {
         

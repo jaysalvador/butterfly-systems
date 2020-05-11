@@ -34,6 +34,13 @@ class OrderViewController: UITableViewController {
         
         self.setupViewModel()
         
+        self.viewModel?.loadOrders()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        super.viewDidAppear(animated)
+        
         self.viewModel?.getOrders()
     }
     
@@ -41,18 +48,28 @@ class OrderViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return viewModel?.orders?.count ?? 0
+        return self.viewModel?.orders?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let order = viewModel?.orders?[indexPath.row],
+        if let order = self.viewModel?.orders?[indexPath.row],
             let cell = tableView.dequeueReusable(cell: OrderCell.self, for: indexPath) {
             
             return cell.prepare(order: order)
         }
         
         return OrderCell()
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if let order = self.viewModel?.orders?[indexPath.row],
+            let vc = DetailViewController.make(withViewModel: DetailViewModel(order: order)) {
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
