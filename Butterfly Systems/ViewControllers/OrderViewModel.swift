@@ -63,6 +63,7 @@ class OrderViewModel: OrderViewModelProtocol {
     
     // MARK: - Functions
     
+    /// Loads orders from the API
     func loadOrders() {
         
         self.orderClient?.getOrders { [weak self] response in
@@ -92,6 +93,7 @@ class OrderViewModel: OrderViewModelProtocol {
         }
     }
     
+    /// Creates a new `Order ` object
     func newOrder() {
         
         if Order.create() != nil {
@@ -107,6 +109,7 @@ class OrderViewModel: OrderViewModelProtocol {
         
     }
     
+    /// Retrieves `Order` array from CoreData
     func getOrders() {
         
         self.orders = Order.fetchOrders()

@@ -62,6 +62,7 @@ class DetailViewModel: DetailViewModelProtocol {
     
     // MARK: - Functions
     
+    /// Gets items based on selected `segment`
     func getItems() {
     
         if self.segment == .item {
@@ -80,6 +81,8 @@ class DetailViewModel: DetailViewModelProtocol {
         self.onUpdated?()
     }
     
+    /// Creates a new `Item` in CoreData
+    /// - Parameter quantity: quantity values
     func newItem(_ quantity: Int) {
         
         if Item.create(order: self.order, quantity: quantity) != nil {

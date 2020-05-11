@@ -11,6 +11,9 @@ import CoreData
 
 extension Item {
     
+    /// Creates a new `Item` associated to an `Order` with generated `id` using the current timestamp
+    /// - Parameter order: parent `Order`
+    /// - Parameter quantity: quantity value
     static func create(order: Order, quantity: Int) -> Item? {
         
         let managedObjectContext = CoreDataStack.persistentContainer.viewContext

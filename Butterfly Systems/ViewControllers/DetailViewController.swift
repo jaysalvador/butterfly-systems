@@ -119,6 +119,8 @@ class DetailViewController: UITableViewController {
 
 extension DetailViewController {
     
+    /// Creates a new `DetailViewController` with injectable `DetailViewModel`
+    /// - Parameter viewModel: `DetailViewModel` object adhering to `DetailViewModelProtocol`
     class func make(withViewModel viewModel: DetailViewModelProtocol) -> DetailViewController? {
         
         if let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
