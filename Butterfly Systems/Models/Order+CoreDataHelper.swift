@@ -11,6 +11,31 @@ import CoreData
 
 extension Order {
     
+    static func create() -> Order? {
+            
+        let managedObjectContext = CoreDataStack.persistentContainer.viewContext
+        
+        let order = Order(context: managedObjectContext)
+        
+        order.id = NSNumber(value: Date().currentTimeMilliseconds())
+        order.issueDate = Date()
+        order.status = NSNumber(value: 1)
+        order.activeFlag = NSNumber(value: 1)
+        order.lastUpdated = Date()
+        order.sentDate = Date()
+        
+        do {
+
+            try managedObjectContext.save()
+            
+            return order
+        }
+        catch {
+            
+             return nil
+        }
+    }
+    
     static func fetchOrders(_ ids: [Int]? = nil) -> [Order]? {
             
         let managedObjectContext = CoreDataStack.persistentContainer.viewContext

@@ -31,6 +31,11 @@
 		B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1424683519003FABE5 /* OrderClient.swift */; };
 		B55C9F192468BF1A003FABE5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */; };
 		B55C9F1B2468C01E003FABE5 /* Order+CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1A2468C01E003FABE5 /* Order+CoreDataHelper.swift */; };
+		B55C9F202468C8EA003FABE5 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F1F2468C8EA003FABE5 /* OrderViewController.swift */; };
+		B55C9F222468C8F3003FABE5 /* OrderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F212468C8F3003FABE5 /* OrderViewModel.swift */; };
+		B55C9F242468CB15003FABE5 /* OrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F232468CB15003FABE5 /* OrderCell.swift */; };
+		B55C9F262468CBC5003FABE5 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F252468CBC5003FABE5 /* UITableView.swift */; };
+		B55C9F282468CF8F003FABE5 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C9F272468CF8F003FABE5 /* Date.swift */; };
 		B922D9121350FE91241223A2 /* Pods_Butterfly_SystemsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */; };
 		E95AFFA0ED313F6B457B835D /* Pods_Butterfly_Systems.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */; };
 /* End PBXBuildFile section */
@@ -78,6 +83,11 @@
 		B55C9F1424683519003FABE5 /* OrderClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderClient.swift; sourceTree = "<group>"; };
 		B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		B55C9F1A2468C01E003FABE5 /* Order+CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Order+CoreDataHelper.swift"; sourceTree = "<group>"; };
+		B55C9F1F2468C8EA003FABE5 /* OrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		B55C9F212468C8F3003FABE5 /* OrderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderViewModel.swift; sourceTree = "<group>"; };
+		B55C9F232468CB15003FABE5 /* OrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderCell.swift; sourceTree = "<group>"; };
+		B55C9F252468CBC5003FABE5 /* UITableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		B55C9F272468CF8F003FABE5 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		DFCA2F49993C0478A023B9A4 /* Pods_Butterfly_SystemsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_SystemsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFCF06CCD86D184F0C9C8871 /* Pods_Butterfly_Systems.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Butterfly_Systems.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -137,16 +147,13 @@
 			isa = PBXGroup;
 			children = (
 				B55C9E5A2466FF46003FABE5 /* API */,
+				B55C9F1E2468C87F003FABE5 /* Common */,
+				B55C9F1C2468C86F003FABE5 /* Cells */,
 				B55C9E5B2466FF51003FABE5 /* Extensions */,
 				B55C9F00246802DD003FABE5 /* Models */,
-				B55C9E342466E411003FABE5 /* AppDelegate.swift */,
-				B55C9E362466E411003FABE5 /* SceneDelegate.swift */,
+				B55C9F1D2468C878003FABE5 /* ViewControllers */,
 				B55C9E382466E411003FABE5 /* ViewController.swift */,
-				B55C9E3A2466E411003FABE5 /* Main.storyboard */,
-				B55C9E402466E412003FABE5 /* Assets.xcassets */,
-				B55C9E422466E412003FABE5 /* LaunchScreen.storyboard */,
 				B55C9E452466E412003FABE5 /* Info.plist */,
-				B55C9E3D2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld */,
 			);
 			path = "Butterfly Systems";
 			sourceTree = "<group>";
@@ -175,11 +182,13 @@
 			isa = PBXGroup;
 			children = (
 				B55C9F0924680722003FABE5 /* CodingUserInfoKey.swift */,
+				B55C9F272468CF8F003FABE5 /* Date.swift */,
 				B55C9F112468336A003FABE5 /* DateFormatter.swift */,
 				B55C9E5E2466FF79003FABE5 /* DispatchQueue.swift */,
 				B55C9F0B24680C0A003FABE5 /* KeyedDecodingContainer.swift */,
 				B55C9F0D24680D29003FABE5 /* KeyedEncodingContainer.swift */,
 				B55C9E5C2466FF67003FABE5 /* URLSession.swift */,
+				B55C9F252468CBC5003FABE5 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -187,6 +196,7 @@
 		B55C9F00246802DD003FABE5 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				B55C9E3D2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld */,
 				B55C9F182468BF1A003FABE5 /* CoreDataStack.swift */,
 				B55C9F01246802DD003FABE5 /* Invoice.swift */,
 				B55C9F02246802DD003FABE5 /* Item.swift */,
@@ -195,6 +205,35 @@
 				B55C9F04246802DD003FABE5 /* Receipt.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		B55C9F1C2468C86F003FABE5 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9F232468CB15003FABE5 /* OrderCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B55C9F1D2468C878003FABE5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9F1F2468C8EA003FABE5 /* OrderViewController.swift */,
+				B55C9F212468C8F3003FABE5 /* OrderViewModel.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B55C9F1E2468C87F003FABE5 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B55C9E342466E411003FABE5 /* AppDelegate.swift */,
+				B55C9E362466E411003FABE5 /* SceneDelegate.swift */,
+				B55C9E3A2466E411003FABE5 /* Main.storyboard */,
+				B55C9E422466E412003FABE5 /* LaunchScreen.storyboard */,
+				B55C9E402466E412003FABE5 /* Assets.xcassets */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		F773F3FCF6EBA1F0555883CA /* Frameworks */ = {
@@ -376,9 +415,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B55C9F0A24680722003FABE5 /* CodingUserInfoKey.swift in Sources */,
+				B55C9F222468C8F3003FABE5 /* OrderViewModel.swift in Sources */,
 				B55C9E392466E411003FABE5 /* ViewController.swift in Sources */,
 				B55C9E352466E411003FABE5 /* AppDelegate.swift in Sources */,
 				B55C9F0E24680D29003FABE5 /* KeyedEncodingContainer.swift in Sources */,
+				B55C9F262468CBC5003FABE5 /* UITableView.swift in Sources */,
+				B55C9F282468CF8F003FABE5 /* Date.swift in Sources */,
 				B55C9E5D2466FF67003FABE5 /* URLSession.swift in Sources */,
 				B55C9F08246802DD003FABE5 /* Receipt.swift in Sources */,
 				B55C9E612466FF94003FABE5 /* HttpMethod.swift in Sources */,
@@ -386,12 +428,14 @@
 				B55C9F192468BF1A003FABE5 /* CoreDataStack.swift in Sources */,
 				B55C9E652466FFE2003FABE5 /* HttpClient.swift in Sources */,
 				B55C9F0C24680C0A003FABE5 /* KeyedDecodingContainer.swift in Sources */,
+				B55C9F242468CB15003FABE5 /* OrderCell.swift in Sources */,
 				B55C9E632466FFA4003FABE5 /* HttpError.swift in Sources */,
 				B55C9F07246802DD003FABE5 /* Order.swift in Sources */,
 				B55C9F06246802DD003FABE5 /* Item.swift in Sources */,
 				B55C9E3F2466E411003FABE5 /* Butterfly_Systems.xcdatamodeld in Sources */,
 				B55C9F1B2468C01E003FABE5 /* Order+CoreDataHelper.swift in Sources */,
 				B55C9F05246802DD003FABE5 /* Invoice.swift in Sources */,
+				B55C9F202468C8EA003FABE5 /* OrderViewController.swift in Sources */,
 				B55C9F1524683519003FABE5 /* OrderClient.swift in Sources */,
 				B55C9E372466E411003FABE5 /* SceneDelegate.swift in Sources */,
 				B55C9E5F2466FF79003FABE5 /* DispatchQueue.swift in Sources */,
