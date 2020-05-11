@@ -11,18 +11,42 @@ import UIKit
 class OrderViewController: UITableViewController {
     
     private var viewModel: OrderViewModelProtocol? = OrderViewModel()
-    
+        
     // MARK: - Setup
+    
+    /// Pull-to-refresh
+    private func setupPullToRefresh() {
+        
+        self.refreshControl = UIRefreshControl()
+        
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "")
+        
+        self.refreshControl?.addTarget(self, action: #selector(onRefresh), for: UIControl.Event.valueChanged)
+    }
     
     private func setupViewModel() {
         
         self.viewModel?.onUpdated = { [weak self] in
             
             self?.tableView.reloadData()
+            
+            self?.refreshControl?.endRefreshing()
         }
         
-        self.viewModel?.onError = {
+        self.viewModel?.onError = { [weak self] in
             
+            DispatchQueue.main.async {
+                
+                let error = self?.viewModel?.error
+                
+                let alert = UIAlertController(title: error?.title, message: error?.errorDescription, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                
+                self?.present(alert, animated: true, completion: nil)
+                
+                self?.refreshControl?.endRefreshing()
+            }
         }
     }
     
@@ -33,6 +57,8 @@ class OrderViewController: UITableViewController {
         super.viewDidLoad()
         
         self.setupViewModel()
+        
+        self.setupPullToRefresh()
         
         self.viewModel?.loadOrders()
     }
@@ -82,5 +108,11 @@ class OrderViewController: UITableViewController {
     @IBAction func addButtonTouchUpInside(_ sender: Any) {
     
         self.viewModel?.newOrder()
+    }
+    
+    @objc
+    func onRefresh() {
+        
+        self.viewModel?.loadOrders()
     }
 }

@@ -27,8 +27,18 @@ class DetailViewController: UITableViewController {
             self?.tableView.reloadData()
         }
         
-        self.viewModel?.onError = {
-            
+        self.viewModel?.onError = { [weak self] in
+                       
+           DispatchQueue.main.async {
+               
+               let error = self?.viewModel?.error
+               
+               let alert = UIAlertController(title: error?.title, message: error?.errorDescription, preferredStyle: .alert)
+               
+               alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+               
+               self?.present(alert, animated: true, completion: nil)
+           }
         }
     }
     
