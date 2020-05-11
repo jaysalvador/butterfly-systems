@@ -72,34 +72,16 @@ class OrderViewModel: OrderViewModelProtocol {
             switch response {
             case .success(let orders):
                 
-                let managedObjectContext = CoreDataStack.persistentContainer.viewContext
-                            
-                for order in orders {
-                    
-                    if let orderDB = ordersDb?.first(where: { $0.id == order.id }) {
-                        
-                        if order.isLastest(orderDB) {
-
-                            managedObjectContext.delete(orderDB)
-                        }
-                        else {
-
-                            managedObjectContext.delete(order)
-                        }
-                    }
-                }
-                
-                do {
-
-                    try managedObjectContext.save()
+                if Order.updateOrders(current: ordersDb, new: orders) {
                     
                     self?.getOrders()
                 }
-                catch {
+                else {
                     
                     self?.error = HttpError.coredata
                     
                     self?.onError?()
+                    
                 }
             case .failure(let error):
             

@@ -7,14 +7,20 @@
 //
 
 import Foundation
+import CoreData
 
 extension Item {
     
     static func create(order: Order, quantity: Int) -> Item? {
         
         let managedObjectContext = CoreDataStack.persistentContainer.viewContext
+        
+        return Item.create(order: order, quantity: quantity, context: managedObjectContext)
+    }
 
-        let item = Item(context: managedObjectContext)
+    static func create(order: Order, quantity: Int, context: NSManagedObjectContext) -> Item? {
+        
+        let item = Item(context: context)
         
         item.id = NSNumber(value: Date().currentTimeMilliseconds())
         item.quantity = NSNumber(value: quantity)
@@ -24,7 +30,7 @@ extension Item {
         
         do {
 
-            try managedObjectContext.save()
+            try context.save()
             
             return item
         }

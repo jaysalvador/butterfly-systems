@@ -44,6 +44,7 @@ class CoreDataStack {
 
     class func saveContext () {
         let context = CoreDataStack.persistentContainer.viewContext
+        
         if context.hasChanges {
             do {
                 try context.save()
