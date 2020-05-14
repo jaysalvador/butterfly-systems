@@ -66,9 +66,9 @@ class OrderViewModel: OrderViewModelProtocol {
     /// Loads orders from the API
     func loadOrders() {
         
-        self.orderClient?.getOrders { [weak self] response in
+        let ordersDb = Order.fetchOrders()
         
-            let ordersDb = Order.fetchOrders()
+        self.orderClient?.getOrders { [weak self] response in
             
             switch response {
             case .success(let orders):
